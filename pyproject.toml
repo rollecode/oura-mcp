@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "oura-mcp"
-version = "1.1.1"
+version = "1.2.0"
 description = "MCP server for the Oura API v2 -- every usercollection resource, not just sleep scores"
 readme = "README.md"
 license = "MIT"

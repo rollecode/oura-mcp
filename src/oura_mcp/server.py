@@ -9,6 +9,7 @@ from datetime import date, datetime, timedelta
 from mcp.server.fastmcp import FastMCP
 from mcp.types import Icon
 
+from . import paging
 from .client import OuraClient, OuraError
 
 logging.basicConfig(level=logging.INFO)
@@ -52,6 +53,7 @@ mcp = FastMCP(
     ),
 )
 mcp._mcp_server.version = __version__
+paging.register(mcp)
 
 _client: OuraClient | None = None
 
@@ -72,7 +74,7 @@ def _parse_date(d: str | None) -> date:
 
 
 def _ok(data) -> str:
-    return json.dumps(data, indent=2, default=str)
+    return paging.fit(data)
 
 
 def _err(e: Exception) -> str:
