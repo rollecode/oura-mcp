@@ -1,3 +1,7 @@
+### 1.2.2: 2026-11-24
+
+* Add Oura wordmark and colors to sign-in page
+
 ### 1.2.1: 2026-10-15
 
 * Fix leaked upstream connections in proxy
